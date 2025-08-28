@@ -1,0 +1,30 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\ForumPost;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class ForumPostFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = ForumPost::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'user_id' => \App\Models\User::factory(),
+            'title' => $this->faker->sentence,
+            'content' => $this->faker->paragraph,
+        ];
+    }
+}
